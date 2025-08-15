@@ -6,7 +6,7 @@ import Main from './MainStack';
 const Stack = createStackNavigator();
 
 const Routes = () => {
-  return (
+  return (  
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Auth" component={Auth} />
       <Stack.Screen name="Main" component={Main} />

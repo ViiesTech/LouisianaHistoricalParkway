@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/LibertinusSerif-Bold.ttf",
+      "sha1": "9bf4904c837663244655d00afcb71d6f63d79623"
+    },
+    {
+      "path": "src/assets/fonts/LibertinusSerif-BoldItalic.ttf",
+      "sha1": "f53fb1abf56ff14f84961466fa53823593422347"
+    },
+    {
+      "path": "src/assets/fonts/LibertinusSerif-Italic.ttf",
+      "sha1": "3e1805a340d7c22012134c55b4b1188a2fd98139"
+    },
+    {
+      "path": "src/assets/fonts/LibertinusSerif-Regular.ttf",
+      "sha1": "85b7f441c5f34150d0738b80c96f3ede75fe24b0"
+    },
+    {
+      "path": "src/assets/fonts/LibertinusSerif-SemiBold.ttf",
+      "sha1": "02e45530ceae5e1e508ce56ee56a372da1937de5"
+    },
+    {
+      "path": "src/assets/fonts/LibertinusSerif-SemiBoldItalic.ttf",
+      "sha1": "3da12cc047a58177a3fbb8ba9ec6c1901d9a7dc1"
+    },
+    {
+      "path": "src/assets/fonts/index.js",
+      "sha1": "6c0a3314b2dbf0786d3869ffe6d0063ab0be8190"
+    }
+  ]
+}
