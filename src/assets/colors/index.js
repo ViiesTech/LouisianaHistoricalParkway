@@ -1,7 +1,17 @@
 export default {
   white: '#FFFF',
+  white2: '#F1F1F1',
   black: '#000',
   primary: '#007C71',
   inputColor: '#F1F1F1',
   placeholderColor: '#A9A9A3',
-}
+  theme: '#60605D',
+  theme2: '#307C71',
+  smallSideTxt: '#307C71',
+  smallIconsBg: '#569BBD',
+  videoIconBg: '#223E4C',
+  title:'#8E8E93',
+  border:'#E6E6DE',
+  readmore:'#947E61',
+  settings:'#363E44',
+};

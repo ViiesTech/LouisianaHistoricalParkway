@@ -8,11 +8,11 @@ import NormalText from '../../components/NormalText';
 import LineBreak from '../../components/LineBreak';
 import Button from '../../components/Button';
 
-const GetStarted = () => {
+const GetStarted = ({ navigation }) => {
 
   const heightAnim = useRef(new Animated.Value(responsiveHeight(10))).current;
   const paddingAnim = useRef(new Animated.Value(responsiveHeight(1))).current;
-  const {navigateToRoute} = useCustomNavigation()
+  const { navigateToRoute } = useCustomNavigation()
 
   useEffect(() => {
     Animated.parallel([
@@ -41,7 +41,7 @@ const GetStarted = () => {
         <LineBreak val={1.5} />
         <NormalText title={'Bookmark, find and love spots from all around the world and create memories to last a lifetime.'} />
         <LineBreak val={4} />
-        <Button title={'Get Started'} />
+        <Button onPress={() => navigation.navigate('SignUp')} title={'Get Started'} />
         <LineBreak val={1.9} />
         <Button onPress={() => navigateToRoute('LoginAsGuest')} buttonTextColor={colors.primary} backgroundColor={'transparent'} borderWidth={1.5} borderColor={colors.primary} title={'Continue as Guest'} />
       </Animated.View>

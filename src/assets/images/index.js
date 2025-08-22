@@ -1,3 +1,18 @@
 export const images = {
-  homeBg:require('./HomeBg.png')
-}
+  homeBg: require('./HomeBg.png'),
+  banner: require('./banner.png'),
+  historical: require('./historical.png'),
+  welcomeBg: require('./welcomeBg.png'),
+  Rapides: require('./Rapides.png'),
+  rapideshBg: require('./RapideshBg.png'),
+  Avoyelles: require('./Avoyelles.png'),
+  restaurant1: require('./restaurant1.png'),
+  restaurant2: require('./restaurant2.png'),
+  restaurantBg: require('./restaurantBg.png'),
+  map: require('./map.png'),
+  mapBg: require('./mapBg.png'),
+  westParish: require('./westParish.png'),
+  tangipahoaParish: require('./tangipahoaParish.png'),
+  stHelenaParish: require('./stHelenaParish.png'),
+  subscription: require('./subscription.png'),
+};

@@ -16,6 +16,7 @@ import RestaurantList from '../screens/mainScreens/RestaurantList';
 import Search from '../screens/mainScreens/Search';
 import Settings from '../screens/mainScreens/Settings';
 import UserProfile from '../screens/mainScreens/UserProfile';
+import RestaurantDetails from '../screens/mainScreens/RestaurantDetails';
 
 const Stack = createStackNavigator();
 const Main = () => {
@@ -40,6 +41,7 @@ const Main = () => {
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="Settings" component={Settings} />
       <Stack.Screen name="UserProfile" component={UserProfile} />
+      <Stack.Screen name="RestaurantDetails" component={RestaurantDetails} />
     </Stack.Navigator>
   );
 };

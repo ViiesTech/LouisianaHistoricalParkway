@@ -3,6 +3,8 @@ import React from 'react';
 import BoldText from './BoldText';
 import colors from '../assets/colors';
 import { responsiveHeight, responsiveWidth } from '../utils/helperFunctions';
+import SVGXml from './SvgIcon';
+import { icons } from '../icons';
 
 const Button = ({
   title,
@@ -15,6 +17,7 @@ const Button = ({
   align,
   buttonTextColor,
   onPress,
+  icon,
 }) => {
   return (
     <TouchableOpacity
@@ -23,16 +26,21 @@ const Button = ({
         styles.buttonStyle,
         {
           borderRadius: borderRadius || 10,
-          width: responsiveWidth(buttonWidth || 90),
+          width: responsiveWidth(buttonWidth || 92.2),
           borderWidth: borderWidth,
           borderColor: borderColor,
           alignSelf: align || 'center',
-          backgroundColor: backgroundColor || colors.primary
+          backgroundColor: backgroundColor || colors.primary,
         },
         style,
       ]}
     >
-      <BoldText size={2} color={buttonTextColor || colors.white} title={title} />
+      {icon ? <SVGXml icon={icon} height={25} width={25} /> : null}
+      <BoldText
+        size={2}
+        color={buttonTextColor || colors.white}
+        title={title}
+      />
     </TouchableOpacity>
   );
 };
