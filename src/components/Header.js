@@ -10,6 +10,7 @@ const Header = ({
   icon,
   children,
   padding,
+  containerPadding,
   showRightIcon = true,
   title,
   rightTxt,
@@ -20,7 +21,7 @@ const Header = ({
       <View
         style={{
           flexDirection: 'row',
-          padding: responsiveHeight(2),
+          padding: containerPadding ? responsiveHeight(containerPadding) : responsiveHeight(2),
           justifyContent: 'space-between',
           alignItems: 'center',
         }}
@@ -39,6 +40,7 @@ const Header = ({
           children // ✅ just render the children
         ) : showRightIcon ? (
           <TouchableOpacity
+            onPress={() => navigation.navigate('RestaurantList')}
             style={{
               backgroundColor: '#F7DB44',
               padding: responsiveHeight(0.9),
@@ -60,9 +62,13 @@ const Header = ({
             justifyContent: 'space-between',
           }}
         >
-          <BoldText color="#363E44" title={title} />
+          <BoldText size={3} color="#363E44" title={title} />
           {rightTxt && (
-            <BoldText title={rightTxt} color={colors.placeholderColor} />
+            <BoldText
+              size={3}
+              title={rightTxt}
+              color={colors.placeholderColor}
+            />
           )}
         </View>
       )}

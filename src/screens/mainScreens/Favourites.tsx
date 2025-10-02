@@ -23,7 +23,7 @@ const Favourites = ({ navigation }) => {
       <View>
         <FlatList contentContainerStyle={{ gap: responsiveHeight(2), padding: responsiveHeight(2) }} data={data} renderItem={({ item, index }) => {
           return (
-            <TouchableOpacity style={{ backgroundColor: colors.white2, borderRadius: responsiveHeight(2), elevation: 5, flexDirection: 'row', gap: responsiveHeight(2), padding: responsiveHeight(1.5) }}>
+            <TouchableOpacity onPress={()=>navigation.navigate('LocationDetails')} style={{ backgroundColor: colors.white2, borderRadius: responsiveHeight(2), elevation: 5, flexDirection: 'row', gap: responsiveHeight(2), padding: responsiveHeight(1.5) }}>
               <Image source={item.image} style={{ width: responsiveWidth(28), height: responsiveHeight(13.3), borderRadius: responsiveHeight(2) }} />
               <View style={{ width: responsiveWidth(55), gap: responsiveHeight(1.4), marginTop: responsiveHeight(0.5), right: 5 }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', width: responsiveWidth(55), gap: responsiveHeight(1), justifyContent: 'space-between' }}>

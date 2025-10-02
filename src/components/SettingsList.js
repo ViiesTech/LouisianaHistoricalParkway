@@ -1,14 +1,24 @@
 /* eslint-disable react-native/no-inline-styles */
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import colors from '../assets/colors';
 import BoldText from './BoldText';
 import { responsiveHeight, responsiveWidth } from '../utils/helperFunctions';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-const SettingsList = ({ leftTxt, rightTxt, iconName, Icon,showBorder=true }) => {
+const SettingsList = ({
+  leftTxt,
+  rightTxt,
+  iconName,
+  Icon,
+  showBorder = true,
+  onPress,
+  disabled = true,
+}) => {
   return (
-    <View
+    <TouchableOpacity
+      disabled={disabled}
+      onPress={onPress}
       style={{
         flexDirection: 'row',
         alignItems: 'center',
@@ -41,25 +51,22 @@ const SettingsList = ({ leftTxt, rightTxt, iconName, Icon,showBorder=true }) => 
         >
           <BoldText size={2.1} title={leftTxt} />
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            {rightTxt ? (
-              <BoldText size={2.2} title={rightTxt} />
-            ) : null}
+            {rightTxt ? <BoldText size={2.2} title={rightTxt} /> : null}
             <Ionicons name="chevron-forward" size={25} />
           </View>
         </View>
         {showBorder && (
-
           <View
-          style={{
-            borderWidth: 1,
-            borderColor: colors.border,
-            top: 10,
-            width: '100%',
-          }}
+            style={{
+              borderWidth: 1,
+              borderColor: colors.border,
+              top: 10,
+              width: '100%',
+            }}
           />
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

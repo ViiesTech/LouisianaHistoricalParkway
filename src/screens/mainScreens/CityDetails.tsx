@@ -31,7 +31,7 @@ const CityDetails = ({ navigation }) => {
         <ScrollView contentContainerStyle={{ flexGrow: 1, padding: responsiveHeight(2) }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             <NormalText title="United States" size={2.4} font={fonts.Semi_Bold} />
-            <SmallContainer title="Route" icon={icons.navigation} width={26} />
+            <SmallContainer handlePress={() => navigation.navigate('Map')} title="Route" icon={icons.navigation} width={26} />
           </View>
           <BoldText color="#363E44" title="Louisiana" size={4} />
           <NormalText color={colors.theme} title="Impedit amet similique enim hic vel soluta excepturi. Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur quo delectus. Occaecati sapiente quis velit." />
@@ -39,17 +39,17 @@ const CityDetails = ({ navigation }) => {
           <BoldText color={colors.black} title="Read more" size={2.2} />
           <LineBreak val={2} />
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(2) }}>
-            <Button icon={icons.trip} style={{ width: responsiveWidth(44), backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
-            <Button icon={icons.loactionPin} style={{ width: responsiveWidth(44), flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
+            <Button onPress={() => navigation.navigate('PaidCities')} icon={icons.trip} style={{ width: responsiveWidth(44), backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
+            <Button onPress={() => navigation.navigate('PaidContinents')} icon={icons.loactionPin} style={{ width: responsiveWidth(44), flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
           </View>
           <LineBreak val={2} />
-          <ListHeading title="Popular Places" onSeeAllPress={() => navigation.navigate('RestaurantList')} />
+          <ListHeading title="Popular Places" onSeeAllPress={() => navigation.navigate('PopularPlaces')} />
           <LineBreak val={2} />
 
           <View>
             <FlatList horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: responsiveHeight(2) }} data={data} renderItem={({ item, index }) => {
               return (
-                <TouchableOpacity style={{ gap: responsiveHeight(1) }}>
+                <TouchableOpacity onPress={() => navigation.navigate('LocationDetails')} style={{ gap: responsiveHeight(1) }}>
                   <Image source={item.image} />
                   <NormalText title={item.title} />
                 </TouchableOpacity>

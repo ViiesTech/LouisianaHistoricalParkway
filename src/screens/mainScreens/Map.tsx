@@ -38,7 +38,7 @@ const Map = ({ navigation }) => {
                   </View>
                   <LineBreak val={1} />
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(1) }}>
-                    <SmallContainer width={23.5} icon={icons.navigation} title="300 M" />
+                    <SmallContainer handlePress={()=>navigation.navigate('NavigationDetails')} width={23.5} icon={icons.navigation} title="300 M" />
                     <SmallContainer width={29} icon={icons.clock} title="20 Minute" />
                   </View>
                 </View>

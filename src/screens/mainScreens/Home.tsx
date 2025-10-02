@@ -19,6 +19,7 @@ import SVGXml from '../../components/SvgIcon';
 import { icons } from '../../icons';
 import SmallContainer from '../../components/SmallContainer';
 import ToursCard from '../../components/ToursCard';
+import Button from '../../components/Button';
 const Home = ({ navigation }) => {
   return (
     <Container gap={1}>
@@ -32,7 +33,7 @@ const Home = ({ navigation }) => {
             <BoldText title="Louisiana, USA" size={2.5} />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.iconContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('UserProfile')} style={styles.iconContainer}>
           <FontAwesome5 name="user-alt" size={25} color={colors.white} />
         </TouchableOpacity>
       </View>
@@ -53,7 +54,9 @@ Announcement
 " color={colors.white} align="center" />
       </ImageBackground>
       <LineBreak val={2} />
-      <ListHeading title="Nearest Places" />
+      <ListHeading title="Ride the parkway" showSeeAll={false} />
+      <Image source={images.rideParkway} style={{ alignSelf: 'center', marginVertical: responsiveHeight(2) }} />
+      <ListHeading title="Nearest Places" onSeeAllPress={() => navigation.navigate('NearbyPlaces')} />
       <LineBreak val={2} />
       <View>
         <FlatList horizontal contentContainerStyle={{ gap: responsiveHeight(2) }} data={[1, 2]} renderItem={({ item, index }) => {
@@ -81,7 +84,7 @@ Announcement
                 </View>
                 <LineBreak val={2} />
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(2) }}>
-                  <SmallContainer width={25} icon={icons.navigation} title="300 M" />
+                  <SmallContainer handlePress={() => navigation.navigate('MapRoutes')} width={25} icon={icons.navigation} title="300 M" />
                   <SmallContainer width={30} icon={icons.clock} title="20 Minute" />
                 </View>
               </View>
@@ -89,14 +92,36 @@ Announcement
           )
         }} />
       </View>
+      <View style={{ padding: responsiveHeight(2), borderColor: '#E2E2E2', borderWidth: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderRadius: responsiveHeight(2), marginTop: responsiveHeight(2) }}>
+        <View style={{ gap: responsiveHeight(1) }}>
+          <BoldText size={2.3} title="Who was Zachary Taylor?" />
+          <Button onPress={()=>navigation.navigate('ZacharyBio')} align="flex-start" title="Learn More" style={{ width: responsiveWidth(30), paddingVertical: responsiveHeight(1.3) }} />
+        </View>
+        <Image resizeMode='contain' source={images.zacharyTaylor} />
+      </View>
       <LineBreak val={2} />
-      <ListHeading title="Tours in Louisiana" />
+      <ListHeading onSeeAllPress={() => navigation.navigate('Tours')} title="Tours in Louisiana" />
       <LineBreak val={2} />
 
       <View>
-        <FlatList horizontal contentContainerStyle={{ gap: responsiveHeight(2) }} showsHorizontalScrollIndicator={false} data={[1, 2]} renderItem={({  }) => {
+        <FlatList horizontal contentContainerStyle={{ gap: responsiveHeight(2) }} showsHorizontalScrollIndicator={false} data={[1, 2]} renderItem={({ }) => {
           return (
-           <ToursCard />
+            <ToursCard />
+          )
+        }} />
+      </View>
+      <ListHeading mrgnTop={2} title="Videos" showSeeAll={false} />
+      <View>
+        <FlatList horizontal contentContainerStyle={{ gap: responsiveHeight(2),marginTop:responsiveHeight(1) }} showsHorizontalScrollIndicator={false} data={[1, 2, 3]} renderItem={({ }) => {
+          return (
+            <View>
+              <Image style={{ borderRadius: responsiveHeight(1.5),height:responsiveHeight(16),width:responsiveWidth(32) }} source={images.videos} />
+              <View style={{height:'100%',position: 'absolute',alignSelf:'center',justifyContent:'center'}}>
+              <TouchableOpacity style={{backgroundColor:colors.videoIconBg,borderWidth:2,borderColor:colors.smallIconsBg,padding:responsiveHeight(1.2),borderRadius:responsiveHeight(3)}}>
+                <Ionicons name="play" color={colors.white} size={25}/>
+              </TouchableOpacity>
+              </View>
+            </View>
           )
         }} />
       </View>

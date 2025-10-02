@@ -3,9 +3,10 @@ import React from 'react';
 import { responsiveFontSize, responsiveWidth } from '../utils/helperFunctions';
 import colors from '../assets/colors';
 
-const NormalText = ({ title, color, size, align, font, width }) => {
+const NormalText = ({ title, color, size, align, font, width,numberOfLines }) => {
   return (
     <Text
+    numberOfLines={numberOfLines}
       style={{
         color: color || colors.black,
         fontSize: responsiveFontSize(size || 2),

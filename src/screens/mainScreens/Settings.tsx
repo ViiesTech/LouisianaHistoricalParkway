@@ -14,7 +14,7 @@ import NormalText from '../../components/NormalText'
 import LineBreak from '../../components/LineBreak'
 import SettingsList from '../../components/SettingsList'
 import Button from '../../components/Button'
-const Settings = () => {
+const Settings = ({ navigation }) => {
   return (
     <Container padding={0.001}>
       <Header title="Settings" showRightIcon={false} padding={0.1} />
@@ -39,10 +39,10 @@ const Settings = () => {
         <View style={{ marginTop: responsiveHeight(6), gap: responsiveHeight(2) }}>
           <NormalText color={colors.title} title="PREFERENCES" />
           <SettingsList iconName="notifications" Icon={Ionicons} rightTxt="Enabled" leftTxt="Notifications" />
-          <SettingsList iconName="information-sharp" Icon={Ionicons} leftTxt="Help" />
+          <SettingsList onPress={() => navigation.navigate('HelpAndSupport')} disabled={false} iconName="information-sharp" Icon={Ionicons} leftTxt="Help" />
         </View>
         <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-          <Button buttonTextColor={colors.smallIconsBg} backgroundColor={colors.white} borderWidth={1.5} borderColor={colors.smallIconsBg} title="Log out" />
+          <Button onPress={() => navigation.navigate('Auth')} buttonTextColor={colors.smallIconsBg} backgroundColor={colors.white} borderWidth={1.5} borderColor={colors.smallIconsBg} title="Log out" />
         </View>
       </View>
     </Container>

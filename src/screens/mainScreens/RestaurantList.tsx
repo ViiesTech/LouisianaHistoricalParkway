@@ -32,7 +32,7 @@ const RestaurantList = ({ navigation }) => {
                   <View style={{ marginTop: 5 }}>
                     <FontAwesome6 name="location-dot" size={25} color={colors.theme2} />
                   </View>
-                  <NormalText width={45} title="Champs de Mars at 5 Avenue Anatole France" />
+                  <NormalText width={43} numberOfLines={2} title="Champs de Mars at 5 Avenue Anatole France" />
                 </View>
                 <LineBreak val={2} />
                 <TouchableOpacity onPress={() => navigation.navigate('RestaurantDetails')} style={{ backgroundColor: colors.smallIconsBg, borderRadius: responsiveHeight(2.5), padding: responsiveHeight(1), width: responsiveWidth(30), justifyContent: 'center', alignItems: 'center' }}>

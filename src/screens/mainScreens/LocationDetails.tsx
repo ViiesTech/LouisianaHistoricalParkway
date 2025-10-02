@@ -28,9 +28,9 @@ const LocationDetails = ({ navigation }) => {
       <View style={{ backgroundColor: colors.white, flex: 1, borderTopLeftRadius: responsiveHeight(2), borderTopRightRadius: responsiveHeight(2), bottom: 10, }}>
 
         <ScrollView contentContainerStyle={{ flexGrow: 1, padding: responsiveHeight(2) }}>
-           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             <NormalText title="USA, Louisiana" size={2.4} font={fonts.Semi_Bold} />
-            <SmallContainer title="Route" icon={icons.navigation} width={26} />
+            <SmallContainer handlePress={()=>navigation.navigate('MapRoutes')} title="Route" icon={icons.navigation} width={26} />
           </View>
           <BoldText color="#363E44" title="Rapides Parish" size={4} />
           <NormalText color={colors.theme} title="mpedit amet similique enim hic vel soluta excepturi. Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur quo delectus. Occaecati sapiente quis velit." />
@@ -46,7 +46,7 @@ Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur
             <NormalText title="47 W 13th St, New York, NY 10011, USA" />
           </View>
           <LineBreak val={2} />
-          <TouchableOpacity onPress={() => navigation.navigate('Map')}>
+          <TouchableOpacity onPress={() => navigation.navigate('MapRoutes')}>
             <Image source={images.map} style={{ width: '100%' }} />
           </TouchableOpacity>
         </ScrollView>

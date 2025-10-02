@@ -8,11 +8,11 @@ import SmallContainer from './SmallContainer';
 import { icons } from '../icons';
 import colors from '../assets/colors';
 
-const ToursCard = ({ isTxt2 = true, bgColor, txtColor, icon2 }) => {
+const ToursCard = ({ isTxt2 = true, bgColor, txtColor, icon2,width = 83 }) => {
   return (
     <TouchableOpacity
       style={{
-        width: responsiveWidth(83),
+        width: responsiveWidth(width),
         backgroundColor: colors.white2,
         padding: responsiveHeight(2),
         paddingVertical: responsiveHeight(2.5),

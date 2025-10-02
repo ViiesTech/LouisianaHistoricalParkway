@@ -2,14 +2,30 @@ import { Text } from 'react-native';
 import React from 'react';
 import colors from '../assets/colors';
 import fonts from '../assets/fonts';
-import { responsiveFontSize, responsiveHeight, responsiveWidth } from '../utils/helperFunctions';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+  responsiveWidth,
+} from '../utils/helperFunctions';
 
-const BoldText = ({ color, size, font, align, title, mrgnTop }) => {
+const BoldText = ({
+  color,
+  size,
+  font,
+  align,
+  title,
+  mrgnTop,
+  numberOfLines,
+  width,
+  fontWeight,
+}) => {
   return (
     <Text
+      numberOfLines={numberOfLines}
       style={{
         color: color || colors.black,
-        // fontWeight: 'bold',
+        width: responsiveWidth(width),
+        fontWeight: fontWeight,
         marginTop: responsiveHeight(mrgnTop),
         fontFamily: font || fonts.Bold,
         fontSize: responsiveFontSize(size || 4),

@@ -31,9 +31,9 @@ const UserProfile = ({ navigation }) => {
     { id: 12, img: images.tangipahoaParish },
   ]
   const listData = [
-    { id: 1, title: 'Visited Places', icon: icons.locationCityBlack },
-    { id: 2, title: 'Favorite Places', icon: icons.locationPinBlack },
-    { id: 3, title: 'Personalized Tours', icon: icons.routesBlack },
+    { id: 1, title: 'Visited Places', navigateTo: 'MyCities', icon: icons.locationCityBlack },
+    { id: 2, title: 'Favorite Places', navigateTo: 'Favourites', icon: icons.locationPinBlack },
+    { id: 3, title: 'Personalized Tours', navigateTo: 'PersonalizedTours', icon: icons.routesBlack },
   ]
   return (
     <Container padding={0.01}>
@@ -41,7 +41,7 @@ const UserProfile = ({ navigation }) => {
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(2) }}>
 
           <TouchableOpacity
-            onPress={() => navigation.goBack()}
+            // onPress={() => navigation.goBack()}
             style={{
               backgroundColor: colors.theme2,
               padding: responsiveHeight(1),
@@ -54,7 +54,7 @@ const UserProfile = ({ navigation }) => {
             <SVGXml icon={icons.ticket} height={responsiveHeight(3)} width={responsiveWidth(7)} />
             <BoldText title="PRO" size={2} color={colors.white} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
             <Ionicons size={30} name="settings-sharp" color={colors.settings} />
           </TouchableOpacity>
         </View>
@@ -79,7 +79,7 @@ const UserProfile = ({ navigation }) => {
         <View>
           <FlatList contentContainerStyle={{ gap: responsiveHeight(2.5), marginVertical: responsiveHeight(4) }} data={listData} renderItem={({ item }) => {
             return (
-              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: responsiveHeight(1) }}>
+              <TouchableOpacity onPress={() => navigation.navigate(item.navigateTo)} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: responsiveHeight(1) }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(1.5) }}>
                   <SVGXml icon={item.icon} />
                   <BoldText size={2.6} title={item.title} />
@@ -87,12 +87,12 @@ const UserProfile = ({ navigation }) => {
                 <TouchableOpacity style={{ backgroundColor: colors.smallIconsBg, padding: responsiveHeight(0.7), borderRadius: responsiveHeight(2) }}>
                   <Ionicons name="chevron-forward" size={20} color={colors.white} />
                 </TouchableOpacity>
-              </View>
+              </TouchableOpacity>
             )
           }} />
         </View>
 
-        <ListHeading mrgnTop={0.0001} title="Found Places" />
+        <ListHeading onSeeAllPress={() => navigation.navigate('FoundPlaces')} mrgnTop={0.0001} title="Found Places" />
       </View>
       <View style={{ paddingBottom: responsiveHeight(0.3), padding: responsiveHeight(0.02) }}>
         <FlatList numColumns={3} contentContainerStyle={{ gap: responsiveHeight(0.6) }} columnWrapperStyle={{ gap: responsiveHeight(0.6) }} data={data} renderItem={({ item }) => {

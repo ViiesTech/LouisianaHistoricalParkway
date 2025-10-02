@@ -1,77 +1,60 @@
-/* eslint-disable react-native/no-inline-styles */
-import { View, ImageBackground, TouchableOpacity, ScrollView, FlatList, Image } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native'
 import React from 'react'
-import Container from '../../components/Container'
-import { images } from '../../assets/images'
 import { responsiveHeight, responsiveWidth } from '../../utils/helperFunctions'
-import colors from '../../assets/colors'
-import NormalText from '../../components/NormalText'
-import SmallContainer from '../../components/SmallContainer'
-import { icons } from '../../icons'
-import fonts from '../../assets/fonts'
-import BoldText from '../../components/BoldText'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import LineBreak from '../../components/LineBreak'
-import Button from '../../components/Button'
-import ListHeading from '../../components/ListHeading'
-import ToursCard from '../../components/ToursCard'
-import Header from '../../components/Header'
-const PaidCities = ({ navigation }) => {
+import BoldText from '../../components/BoldText'
+import Container from '../../components/Container'
+import InputField from '../../components/InputField'
+import colors from '../../assets/colors'
+import { images } from '../../assets/images'
+import NormalText from '../../components/NormalText'
+import SVGXml from '../../components/SvgIcon'
+import { icons } from '../../icons'
+const PaidContinents = ({ navigation }) => {
   const data = [
-    { id: 1, image: images.Rapides, title: 'Rapides Parish' },
-    { id: 2, image: images.Avoyelles, title: 'Avoyelles Parish' },
-    { id: 3, image: images.Rapides, title: 'Rapides Parish' },
+    { id: 1, title: 'Avoyelles', image: images.Avoyelles },
+    { id: 2, title: 'Rapides Parish', image: images.Rapides },
+    { id: 3, title: 'West Feliciana', image: images.westParish },
+    { id: 4, title: 'East Feliciana', image: images.Avoyelles },
+    { id: 5, title: 'St. Helena', image: images.Rapides },
+    { id: 6, title: 'Tangipahoa', image: images.Avoyelles },
+    { id: 7, title: 'Pointe Coupe', image: images.Rapides },
+    { id: 8, title: 'Washington', image: images.westParish },
+    { id: 9, title: 'Rapides Parish', image: images.westParish },
   ]
   return (
-    <Container padding={0.01}>
-      <ImageBackground source={images.welcomeBg} style={{ width: '100%', height: responsiveHeight(27) }}>
-        <Header />
-      </ImageBackground>
-      <View style={{ backgroundColor: colors.white, flex: 1, borderTopLeftRadius: responsiveHeight(2), borderTopRightRadius: responsiveHeight(2), bottom: 10, }}>
+    <Container padding={0.001}>
+      <View style={{ padding: responsiveHeight(2) }}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="chevron-back-outline" size={30} />
+        </TouchableOpacity>
+        <LineBreak val={2} />
+        <BoldText title="Explore the Louisiana Historical Parkway" />
+        <LineBreak val={2} />
 
-        <ScrollView contentContainerStyle={{ flexGrow: 1, padding: responsiveHeight(2) }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <NormalText title="United States" size={2.4} font={fonts.Semi_Bold} />
-            <SmallContainer title="Route" icon={icons.navigation} width={26} />
-          </View>
-          <BoldText color="#363E44" title="Louisiana" size={4} />
-          <NormalText color={colors.theme} title="Impedit amet similique enim hic vel soluta excepturi. Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur quo delectus. Occaecati sapiente quis velit." />
-          <LineBreak val={1.4} />
-          <BoldText color={colors.black} title="Read more" size={2.2} />
-          <LineBreak val={2} />
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(2) }}>
-            <Button icon={icons.trip} style={{ width: responsiveWidth(44), backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
-            <Button icon={icons.loactionPin} style={{ width: responsiveWidth(44), flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
-          </View>
-          <LineBreak val={2} />
-          <ListHeading title="Popular Places" onSeeAllPress={() => navigation.navigate('RestaurantList')} />
-          <LineBreak val={2} />
-
-          <View>
-            <FlatList horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: responsiveHeight(2) }} data={data} renderItem={({ item, index }) => {
-              return (
-                <TouchableOpacity style={{ gap: responsiveHeight(1) }}>
-                  <Image source={item.image} />
-                  <NormalText title={item.title} />
-                </TouchableOpacity>
-              )
-            }} />
-          </View>
-          <LineBreak val={1.5} />
-          <ListHeading title="Popular Tours" showSeeAll={false} />
-          <LineBreak val={1.5} />
-
-          <View>
-            <FlatList horizontal contentContainerStyle={{ gap: responsiveHeight(2) }} showsHorizontalScrollIndicator={false} data={[1, 2]} renderItem={({ }) => {
-              return (
-                <ToursCard icon2={true} txtColor={colors.theme} bgColor={'#E6E6DE'} isTxt2={false} />
-              )
-            }} />
-          </View>
-        </ScrollView>
+        <InputField placeHolderColor={colors.placeholderColor} showSearch mrgnLeft={4} placeholder="Search" />
+        <LineBreak val={4} />
+        <View>
+          <BoldText title="Popular Places" size={2.8} />
+          <FlatList data={data} numColumns={3} contentContainerStyle={{ marginTop: responsiveHeight(1.5), justifyContent: 'space-between', gap: responsiveHeight(2) }} columnWrapperStyle={{ gap: responsiveHeight(1.5), justifyContent: 'space-between' }} renderItem={({ item, index }) => {
+            return (
+              <TouchableOpacity onPress={() => navigation.navigate('PriceDetails')} style={{ width: responsiveWidth(28) }}>
+                <View>
+                  <Image source={item.image} style={{ width: '100%', height: responsiveHeight(15), marginBottom: responsiveHeight(0.7), borderRadius: responsiveHeight(1) }} />
+                  <View style={{ position: 'absolute', right: 5, top: 5 }}>
+                    <SVGXml icon={icons.dollar} />
+                  </View>
+                </View>
+                <BoldText numberOfLines={1} size={2.3} title={item.title} />
+                <NormalText color={colors.placeholderColor} size={1.8} title="United States" />
+              </TouchableOpacity>
+            )
+          }} />
+        </View>
       </View>
-
     </Container>
   )
 }
 
-export default PaidCities
+export default PaidContinents

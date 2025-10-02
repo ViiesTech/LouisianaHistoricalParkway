@@ -31,7 +31,7 @@ const PersonalizedTours = ({ navigation }) => {
         <ScrollView contentContainerStyle={{ flexGrow: 1, padding: responsiveHeight(2) }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             <NormalText title="United States, Louisiana" size={2.4} font={fonts.Semi_Bold} />
-            <SmallContainer title="Route" icon={icons.navigation} width={26} />
+            <SmallContainer handlePress={() => navigation.navigate('Map')} title="Route" icon={icons.navigation} width={26} />
           </View>
           <BoldText color="#363E44" title="Rapides Parish" size={4} />
           <NormalText color={colors.theme} title="Impedit amet similique enim hic vel soluta excepturi. Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur quo delectus. Occaecati sapiente quis velit." />
@@ -39,17 +39,17 @@ const PersonalizedTours = ({ navigation }) => {
           <BoldText color={colors.readmore} title="Read more" size={2.2} />
           <LineBreak val={2} />
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: responsiveHeight(2) }}>
-            <Button icon={icons.trip} style={{ width: responsiveWidth(44), flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
-            <Button icon={icons.loactionPin} style={{ width: responsiveWidth(44), backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
+            <Button  onPress={()=>navigation.navigate('PaidCities')} icon={icons.trip} style={{ width: responsiveWidth(44), flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
+            <Button  onPress={()=>navigation.navigate('PaidContinents')} icon={icons.loactionPin} style={{ width: responsiveWidth(44), backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
           </View>
           <LineBreak val={2} />
-          <ListHeading mrgnTop={0.001} title="Locations you’ll visit"  />
+          <ListHeading onSeeAllPress={()=>navigation.navigate('PopularPlaces')}  mrgnTop={0.001} title="Locations you’ll visit"  />
           <LineBreak val={2} />
 
           <View>
             <FlatList horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: responsiveHeight(2) }} data={data} renderItem={({ item, index }) => {
               return (
-                <TouchableOpacity style={{ gap: responsiveHeight(1) }}>
+                <TouchableOpacity onPress={()=>navigation.navigate('LocationDetails')} style={{ gap: responsiveHeight(1) }}>
                   <Image source={item.image} />
                   <NormalText title={item.title} />
                 </TouchableOpacity>
@@ -57,7 +57,7 @@ const PersonalizedTours = ({ navigation }) => {
             }} />
           </View>
           <LineBreak val={1.5} />
-          <ListHeading mrgnTop={0.001} title="Tour Route"  />
+          <ListHeading onSeeAllPress={()=>navigation.navigate('Tours')}  mrgnTop={0.001} title="Tour Route"  />
 
           <LineBreak val={1.5} />
 
@@ -67,12 +67,12 @@ const PersonalizedTours = ({ navigation }) => {
                 <ToursCard icon2={true} txtColor={colors.theme} bgColor={'#E6E6DE'} isTxt2={false} />
               )
             }} /> */}
-            <TouchableOpacity >
+            <TouchableOpacity onPress={()=>navigation.navigate('Map')}>
               <Image source={images.map} style={{ width: '100%' }} />
             </TouchableOpacity>
           </View>
           <LineBreak val={4} />
-          <Button title="Start Tour" />
+          <Button onPress={()=>navigation.navigate('Map')} title="Start Tour" />
         </ScrollView>
       </View>
 

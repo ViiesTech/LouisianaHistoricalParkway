@@ -36,7 +36,7 @@ const GetStarted = ({ navigation }) => {
       style={styles.background}
       source={images.homeBg}
     >
-      <Animated.View style={[styles.whiteBackground, { height: heightAnim, paddingVertical: paddingAnim }]}>,
+      <Animated.View style={[styles.whiteBackground, { height: heightAnim, paddingVertical: paddingAnim }]}>
         <BoldText title={'Louisiana Historical Parkway'} />
         <LineBreak val={1.5} />
         <NormalText title={'Bookmark, find and love spots from all around the world and create memories to last a lifetime.'} />

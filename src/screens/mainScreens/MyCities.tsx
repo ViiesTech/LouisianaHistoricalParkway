@@ -11,7 +11,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Button from '../../components/Button'
 import { icons } from '../../icons'
 import LineBreak from '../../components/LineBreak'
-const MyCities = () => {
+const MyCities = ({navigation}) => {
   return (
     <Container padding={0.001}>
       <Header title="My Place" showRightIcon={false} padding={0.1} />
@@ -33,8 +33,8 @@ const MyCities = () => {
               <LineBreak val={1.5} />
               <NormalText color={colors.theme} title="Impedit amet similique enim hic vel soluta excepturi. Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur quo delectus. Occaecati sapiente quis velit." />
               <View style={{ flexDirection: 'row', marginTop: responsiveHeight(3), alignItems: 'center', gap: responsiveHeight(2) }}>
-                <Button icon={icons.trip} style={{ width: '48%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
-                <Button icon={icons.loactionPin} style={{ width: '48%', backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
+                <Button onPress={()=>navigation.navigate('PaidCities')} icon={icons.trip} style={{ width: '48%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="24 tours" />
+                <Button onPress={()=>navigation.navigate('PaidContinents')} icon={icons.loactionPin} style={{ width: '48%', backgroundColor: colors.smallIconsBg, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: responsiveHeight(2) }} title="434 places" />
               </View>
             </View>
           )

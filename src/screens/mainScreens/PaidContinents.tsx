@@ -32,7 +32,7 @@ const PaidContinents = ({ navigation }) => {
         <View>
           <FlatList data={data} numColumns={2} contentContainerStyle={{ justifyContent: 'space-between', gap: responsiveHeight(2) }} columnWrapperStyle={{ gap: responsiveHeight(1.5), justifyContent: 'space-between' }} renderItem={({ item, index }) => {
             return (
-              <TouchableOpacity style={{ width: responsiveWidth(44) }}>
+              <TouchableOpacity onPress={() => navigation.navigate('PriceDetails')} style={{ width: responsiveWidth(44) }}>
                 <Image source={item.image} style={{ width: responsiveWidth(43), marginBottom: responsiveHeight(0.7), borderRadius: responsiveHeight(1) }} />
                 <BoldText size={2.3} title={item.title} />
               </TouchableOpacity>
