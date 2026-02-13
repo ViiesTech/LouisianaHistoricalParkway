@@ -21,29 +21,37 @@ const SmallContainer = ({
   txtSize = 2,
   gap = 1.2,
   paddingVertical = 1.1,
+  disabled = true,
+  iconSize = 20,
 }) => {
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={handlePress}
       style={{
-        flexDirection: 'row',
         justifyContent: 'center',
-        width: width ? responsiveWidth(width) : responsiveWidth(30),
+        width: width ? responsiveWidth(width) : responsiveHeight(7),
+        height: width ? responsiveWidth(width) : responsiveHeight(7),
         alignItems: 'center',
         backgroundColor: bgColor ? bgColor : colors.smallIconsBg,
-        padding: responsiveHeight(0.5),
-        paddingHorizontal: responsiveHeight(2),
-        paddingVertical: responsiveHeight(paddingVertical),
-        gap: responsiveHeight(gap),
-        borderRadius: responsiveHeight(2.5),
+        borderRadius: 999,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 3.5,
+        // elevation: 4,
       }}
     >
-      <SVGXml icon={icon} height={20} width={20} />
-      <NormalText
+      <SVGXml icon={icon} height={iconSize} width={iconSize} />
+      {/* <NormalText
+        numberOfLines={1}
         size={txtSize}
         title={title}
         color={txtColor ? txtColor : colors.white}
-      />
+      /> */}
     </TouchableOpacity>
   );
 };

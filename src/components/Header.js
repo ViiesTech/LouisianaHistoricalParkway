@@ -6,14 +6,20 @@ import colors from '../assets/colors';
 import { responsiveHeight } from '../utils/helperFunctions';
 import { useNavigation } from '@react-navigation/native';
 import BoldText from './BoldText';
+import AddToFavrt from './AddToFavrt';
 const Header = ({
   icon,
   children,
-  padding,
-  containerPadding,
+  padding = 1,
+  containerPadding = 2,
   showRightIcon = true,
   title,
   rightTxt,
+  cityId,
+  pVertical = 1,
+  iconOnly = true,
+  isProcessing = false,
+  onProcessingChange,
 }) => {
   const navigation = useNavigation();
   return (
@@ -21,36 +27,37 @@ const Header = ({
       <View
         style={{
           flexDirection: 'row',
-          padding: containerPadding ? responsiveHeight(containerPadding) : responsiveHeight(2),
+          padding: responsiveHeight(containerPadding),
           justifyContent: 'space-between',
           alignItems: 'center',
         }}
       >
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={{
-            backgroundColor: colors.white,
-            padding: padding ? responsiveHeight(padding) : responsiveHeight(1),
-            borderRadius: responsiveHeight(2.5),
-          }}
-        >
-          <Ionicons name="chevron-back-outline" size={25} />
-        </TouchableOpacity>
+        {iconOnly ? (
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="chevron-back-outline" size={25} />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={{
+              backgroundColor: colors.white,
+              paddingTop: responsiveHeight(padding),
+              paddingVertical: responsiveHeight(pVertical),
+              paddingHorizontal: responsiveHeight(padding),
+              borderRadius: responsiveHeight(2.5),
+            }}
+          >
+            <Ionicons name="chevron-back-outline" size={25} />
+          </TouchableOpacity>
+        )}
         {children ? (
           children // ✅ just render the children
         ) : showRightIcon ? (
-          <TouchableOpacity
-            onPress={() => navigation.navigate('RestaurantList')}
-            style={{
-              backgroundColor: '#F7DB44',
-              padding: responsiveHeight(0.9),
-              borderRadius: responsiveHeight(2.5),
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Ionicons name="heart-outline" size={25} color={colors.black} />
-          </TouchableOpacity>
+          <AddToFavrt 
+            cityId={cityId} 
+            isProcessing={isProcessing}
+            onProcessingChange={onProcessingChange}
+          />
         ) : null}
       </View>
       {title && (
@@ -62,7 +69,13 @@ const Header = ({
             justifyContent: 'space-between',
           }}
         >
-          <BoldText size={3} color="#363E44" title={title} />
+          <BoldText
+            size={3}
+            width={50}
+            numberOfLines={2}
+            color="#363E44"
+            title={title}
+          />
           {rightTxt && (
             <BoldText
               size={3}

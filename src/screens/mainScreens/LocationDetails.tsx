@@ -1,5 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
-import { View, ImageBackground, TouchableOpacity, ScrollView, FlatList, Image } from 'react-native'
+import { View, ImageBackground, TouchableOpacity, ScrollView, FlatList } from 'react-native'
+import FastImage from 'react-native-fast-image';
 import React from 'react'
 import Container from '../../components/Container'
 import { images } from '../../assets/images'
@@ -47,7 +48,7 @@ Qui porro repellat beatae qui. Eaque voluptas aliquam exercitationem consectetur
           </View>
           <LineBreak val={2} />
           <TouchableOpacity onPress={() => navigation.navigate('MapRoutes')}>
-            <Image source={images.map} style={{ width: '100%' }} />
+            <FastImage source={images.map} style={{ width: '100%', height: 200 }} resizeMode={FastImage.resizeMode.contain} />
           </TouchableOpacity>
         </ScrollView>
       </View>

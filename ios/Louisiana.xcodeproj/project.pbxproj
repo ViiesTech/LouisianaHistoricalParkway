@@ -7,48 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008FAFAF9379470DB5E6668B /* LibertinusSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6482F0CB877C402190D407E8 /* LibertinusSerif-Italic.ttf */; };
+		0813A4B9EC124B289B75B796 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 077B9C06CC0941F18E2F6920 /* index.js */; };
 		0C80B921A6F3F58F76C31292 /* libPods-Louisiana.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Louisiana.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		25A3FE9B20B14A9494B6983A /* LibertinusSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4799934F62D49EEB997B518 /* LibertinusSerif-Regular.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E8EAF2A5CE9342DDB7C50EFA /* LibertinusSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD71B17BC0E3469BB8CE94E1 /* LibertinusSerif-Bold.ttf */; };
-		CBEA4F22C56B424E97775A3F /* LibertinusSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F05CD21ED94415B212CA18 /* LibertinusSerif-BoldItalic.ttf */; };
-		008FAFAF9379470DB5E6668B /* LibertinusSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6482F0CB877C402190D407E8 /* LibertinusSerif-Italic.ttf */; };
-		25A3FE9B20B14A9494B6983A /* LibertinusSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4799934F62D49EEB997B518 /* LibertinusSerif-Regular.ttf */; };
+		A4E96FEE68DAC3D2273A5150 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		BB8EF36667914065939DA3F2 /* LibertinusSerif-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2053FF3AB4B8424DB5D4F4EE /* LibertinusSerif-SemiBold.ttf */; };
+		CBEA4F22C56B424E97775A3F /* LibertinusSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F05CD21ED94415B212CA18 /* LibertinusSerif-BoldItalic.ttf */; };
+		E8EAF2A5CE9342DDB7C50EFA /* LibertinusSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD71B17BC0E3469BB8CE94E1 /* LibertinusSerif-Bold.ttf */; };
 		FBF0B488F65948CF88A9E2DA /* LibertinusSerif-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCFADE1DEDC14F528C90E198 /* LibertinusSerif-SemiBoldItalic.ttf */; };
-		0813A4B9EC124B289B75B796 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 077B9C06CC0941F18E2F6920 /* index.js */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Louisiana;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		077B9C06CC0941F18E2F6920 /* index.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = index.js; path = ../src/assets/fonts/index.js; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Louisiana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Louisiana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Louisiana/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Louisiana/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Louisiana/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2053FF3AB4B8424DB5D4F4EE /* LibertinusSerif-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LibertinusSerif-SemiBold.ttf"; path = "../src/assets/fonts/LibertinusSerif-SemiBold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Louisiana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Louisiana.debug.xcconfig"; path = "Target Support Files/Pods-Louisiana/Pods-Louisiana.debug.xcconfig"; sourceTree = "<group>"; };
+		46F05CD21ED94415B212CA18 /* LibertinusSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LibertinusSerif-BoldItalic.ttf"; path = "../src/assets/fonts/LibertinusSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Louisiana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Louisiana.release.xcconfig"; path = "Target Support Files/Pods-Louisiana/Pods-Louisiana.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Louisiana.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Louisiana.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6482F0CB877C402190D407E8 /* LibertinusSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LibertinusSerif-Italic.ttf"; path = "../src/assets/fonts/LibertinusSerif-Italic.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Louisiana/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Louisiana/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD71B17BC0E3469BB8CE94E1 /* LibertinusSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LibertinusSerif-Bold.ttf"; path = "../src/assets/fonts/LibertinusSerif-Bold.ttf"; sourceTree = "<group>"; };
+		C4799934F62D49EEB997B518 /* LibertinusSerif-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LibertinusSerif-Regular.ttf"; path = "../src/assets/fonts/LibertinusSerif-Regular.ttf"; sourceTree = "<group>"; };
+		CCFADE1DEDC14F528C90E198 /* LibertinusSerif-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "LibertinusSerif-SemiBoldItalic.ttf"; path = "../src/assets/fonts/LibertinusSerif-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		BD71B17BC0E3469BB8CE94E1 /* LibertinusSerif-Bold.ttf */ = {isa = PBXFileReference; name = "LibertinusSerif-Bold.ttf"; path = "../src/assets/fonts/LibertinusSerif-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		46F05CD21ED94415B212CA18 /* LibertinusSerif-BoldItalic.ttf */ = {isa = PBXFileReference; name = "LibertinusSerif-BoldItalic.ttf"; path = "../src/assets/fonts/LibertinusSerif-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6482F0CB877C402190D407E8 /* LibertinusSerif-Italic.ttf */ = {isa = PBXFileReference; name = "LibertinusSerif-Italic.ttf"; path = "../src/assets/fonts/LibertinusSerif-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C4799934F62D49EEB997B518 /* LibertinusSerif-Regular.ttf */ = {isa = PBXFileReference; name = "LibertinusSerif-Regular.ttf"; path = "../src/assets/fonts/LibertinusSerif-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2053FF3AB4B8424DB5D4F4EE /* LibertinusSerif-SemiBold.ttf */ = {isa = PBXFileReference; name = "LibertinusSerif-SemiBold.ttf"; path = "../src/assets/fonts/LibertinusSerif-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CCFADE1DEDC14F528C90E198 /* LibertinusSerif-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "LibertinusSerif-SemiBoldItalic.ttf"; path = "../src/assets/fonts/LibertinusSerif-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		077B9C06CC0941F18E2F6920 /* index.js */ = {isa = PBXFileReference; name = "index.js"; path = "../src/assets/fonts/index.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,14 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* Louisiana */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,17 +104,8 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3B4392A12AC88292D35C810B /* Pods-Louisiana.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-Louisiana.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		8E5D2D6D9DDC40408E26B1E4 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				BD71B17BC0E3469BB8CE94E1 /* LibertinusSerif-Bold.ttf */,
 				46F05CD21ED94415B212CA18 /* LibertinusSerif-BoldItalic.ttf */,
@@ -143,8 +116,17 @@
 				077B9C06CC0941F18E2F6920 /* index.js */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-Louisiana.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-Louisiana.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -202,13 +184,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00E356EC1AD99517003FC87E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +197,7 @@
 				BB8EF36667914065939DA3F2 /* LibertinusSerif-SemiBold.ttf in Resources */,
 				FBF0B488F65948CF88A9E2DA /* LibertinusSerif-SemiBoldItalic.ttf in Resources */,
 				0813A4B9EC124B289B75B796 /* index.js in Resources */,
+				A4E96FEE68DAC3D2273A5150 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,14 +288,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Louisiana */;
-			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
@@ -445,7 +413,14 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -510,7 +485,13 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -14,6 +14,7 @@ const SettingsList = ({
   showBorder = true,
   onPress,
   disabled = true,
+  showIcon = false,
 }) => {
   return (
     <TouchableOpacity
@@ -29,7 +30,7 @@ const SettingsList = ({
       <View
         style={{
           backgroundColor: colors.theme2,
-          width: responsiveWidth(10),
+          width: responsiveWidth(11),
           height: responsiveHeight(5),
           justifyContent: 'center',
           alignItems: 'center',
@@ -52,7 +53,7 @@ const SettingsList = ({
           <BoldText size={2.1} title={leftTxt} />
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             {rightTxt ? <BoldText size={2.2} title={rightTxt} /> : null}
-            <Ionicons name="chevron-forward" size={25} />
+            {showIcon &&  <Ionicons name="chevron-forward" size={25} />}
           </View>
         </View>
         {showBorder && (

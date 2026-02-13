@@ -18,9 +18,11 @@ const Button = ({
   buttonTextColor,
   onPress,
   icon,
+  disabled = false,
 }) => {
   return (
     <TouchableOpacity
+    disabled={disabled}
       onPress={onPress}
       style={[
         styles.buttonStyle,

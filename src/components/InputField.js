@@ -14,7 +14,7 @@ const InputField = ({
   onChangeText,
   keyboardType,
   onEyePress,
-  showPassword,
+  showPassword = true,
   showEye = false,
   mrgnLeft,
   showSearch = false,
@@ -29,7 +29,9 @@ const InputField = ({
         keyboardType={keyboardType}
         onChangeText={onChangeText}
         style={[styles.input, { marginLeft: responsiveHeight(mrgnLeft) }]}
-        placeholderTextColor={placeHolderColor ? placeHolderColor : colors.black}
+        placeholderTextColor={
+          placeHolderColor ? placeHolderColor : colors.black
+        }
         placeholder={placeholder}
       />
       {showEye ? (
@@ -71,6 +73,6 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: responsiveFontSize(1.9),
-    color: colors.placeholderColor,
+    color: colors.black,
   },
 });

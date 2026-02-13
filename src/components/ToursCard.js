@@ -8,19 +8,41 @@ import SmallContainer from './SmallContainer';
 import { icons } from '../icons';
 import colors from '../assets/colors';
 
-const ToursCard = ({ isTxt2 = true, bgColor, txtColor, icon2,width = 83 }) => {
+const ToursCard = ({
+  isTxt2 = true,
+  bgColor,
+  txtColor,
+  icon2,
+  width = 83,
+  title = 'Bateaux Parisiens',
+  subtitle = null,
+  durationTitle = '3 hours',
+  placesTitle = '25 places',
+  onPress,
+}) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={{
         width: responsiveWidth(width),
-        backgroundColor: colors.white2,
-        padding: responsiveHeight(2),
+        backgroundColor: colors.white,
+        padding: responsiveHeight(2.5),
         paddingVertical: responsiveHeight(2.5),
-        borderRadius: responsiveHeight(2),
+        borderRadius: responsiveHeight(2.5),
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 4,
+        },
+        shadowOpacity: 0.12,
+        shadowRadius: 6,
+        elevation: 5,
       }}
     >
-      <BoldText color="#363E44" size={2.7} title="Bateaux Parisiens" />
-      {isTxt2 && <BoldText color="#363E44" size={2.7} title="Seine River" />}
+      <BoldText color="#363E44" size={2.7} title={title} />
+      {isTxt2 && subtitle && (
+        <BoldText color="#363E44" size={2.7} title={subtitle} />
+      )}
       <LineBreak val={2} />
       <View
         style={{
@@ -32,23 +54,16 @@ const ToursCard = ({ isTxt2 = true, bgColor, txtColor, icon2,width = 83 }) => {
         <SmallContainer
           txtColor={txtColor && txtColor}
           bgColor={bgColor && bgColor}
-          width={25}
+          width={10}
           icon={icon2 ? icons.clock2 : icons.clock}
-          title="3 hours"
+          title={durationTitle}
         />
         <SmallContainer
           txtColor={txtColor && txtColor}
           bgColor={bgColor && bgColor}
-          width={30}
+          width={10}
           icon={icon2 ? icons.locationPin2 : icons.loactionPin}
-          title="25 places"
-        />
-        <SmallContainer
-          txtColor={txtColor && txtColor}
-          bgColor={bgColor && bgColor}
-          width={17}
-          icon={icon2 ? icons.dollar2 : icons.dollar}
-          title="25"
+          title={placesTitle}
         />
       </View>
     </TouchableOpacity>

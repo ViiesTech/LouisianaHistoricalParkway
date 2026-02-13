@@ -41,9 +41,9 @@ const GetStarted = ({ navigation }) => {
         <LineBreak val={1.5} />
         <NormalText title={'Bookmark, find and love spots from all around the world and create memories to last a lifetime.'} />
         <LineBreak val={4} />
-        <Button onPress={() => navigation.navigate('SignUp')} title={'Get Started'} />
+        <Button onPress={() => navigation.navigate('ChooseInterest')} title={'Get Started'} />
         <LineBreak val={1.9} />
-        <Button onPress={() => navigateToRoute('LoginAsGuest')} buttonTextColor={colors.primary} backgroundColor={'transparent'} borderWidth={1.5} borderColor={colors.primary} title={'Continue as Guest'} />
+        {/* <Button onPress={() => navigateToRoute('LoginAsGuest')} buttonTextColor={colors.primary} backgroundColor={'transparent'} borderWidth={1.5} borderColor={colors.primary} title={'Continue as Guest'} /> */}
       </Animated.View>
     </ImageBackground>
   );
