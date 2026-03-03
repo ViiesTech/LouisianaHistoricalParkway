@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Platform } from 'react-native';
 import React from 'react';
 import { responsiveHeight, responsiveWidth } from '../utils/helperFunctions';
 import BoldText from './BoldText';
@@ -30,12 +30,11 @@ const ToursCard = ({
         paddingVertical: responsiveHeight(2.5),
         borderRadius: responsiveHeight(2.5),
         shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 4,
-        },
-        shadowOpacity: 0.12,
-        shadowRadius: 6,
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.25,
+        shadowRadius: 5,
+
+        // Android
         elevation: 5,
       }}
     >

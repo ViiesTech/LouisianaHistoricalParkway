@@ -6,6 +6,7 @@ import {
   FlatList,
   ActivityIndicator,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import { createThumbnail } from 'react-native-create-thumbnail';
@@ -100,14 +101,13 @@ const NearestCities = ({
                 borderRadius: responsiveHeight(2.5),
                 width: responsiveWidth(70),
                 shadowColor: '#000',
-                shadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                shadowOpacity: 0.12,
-                shadowRadius: 6,
+                shadowOffset: { width: 0, height: 3 },
+                shadowOpacity: 0.25,
+                shadowRadius: 5,
+
+                // Android
                 elevation: 5,
-                overflow: 'hidden',
+                overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
               }}
             >
               <View>
@@ -232,12 +232,11 @@ const NearestCities = ({
                     justifyContent: 'center',
                     alignItems: 'center',
                     shadowColor: '#000',
-                    shadowOffset: {
-                      width: 0,
-                      height: 2,
-                    },
+                    shadowOffset: { width: 0, height: 3 },
                     shadowOpacity: 0.25,
-                    shadowRadius: 3.5,
+                    shadowRadius: 5,
+
+                    // Android
                     elevation: 5,
                   }}
                 />

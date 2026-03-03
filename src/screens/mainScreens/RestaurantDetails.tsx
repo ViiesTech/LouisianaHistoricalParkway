@@ -610,7 +610,7 @@ const RestaurantDetails = ({ navigation, route }) => {
                   >
                     <MapView
                       userInterfaceStyle="light"
-                      provider={PROVIDER_GOOGLE}
+                      provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : null}
                       style={{ flex: 1 }}
                       initialRegion={mapRegion}
                       scrollEnabled={false}

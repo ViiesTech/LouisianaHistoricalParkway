@@ -9,6 +9,7 @@ import {
   Modal,
   Dimensions,
   StyleSheet,
+  Platform,
 } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import Container from '../../components/Container';
@@ -70,7 +71,7 @@ const NearbyPlaces = ({ navigation }) => {
           const params = {
             latitude: latLng.latitude,
             longitude: latLng.longitude,
-            maxDistance:50000000
+            maxDistance: 50000000,
           };
           const res: any = await getAllCities(params).unwrap();
           setCities(res?.cities || []);
@@ -247,14 +248,13 @@ const NearbyPlaces = ({ navigation }) => {
                       borderRadius: responsiveHeight(2.5),
                       width: '48%',
                       shadowColor: '#000',
-                      shadowOffset: {
-                        width: 0,
-                        height: 4,
-                      },
-                      shadowOpacity: 0.12,
-                      shadowRadius: 6,
+                      shadowOffset: { width: 0, height: 3 },
+                      shadowOpacity: 0.25,
+                      shadowRadius: 5,
+
+                      // Android
                       elevation: 5,
-                      overflow: 'hidden',
+                      overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
                     }}
                   >
                     <View>
@@ -330,12 +330,11 @@ const NearbyPlaces = ({ navigation }) => {
                           justifyContent: 'center',
                           alignItems: 'center',
                           shadowColor: '#000',
-                          shadowOffset: {
-                            width: 0,
-                            height: 2,
-                          },
+                          shadowOffset: { width: 0, height: 3 },
                           shadowOpacity: 0.25,
-                          shadowRadius: 3.5,
+                          shadowRadius: 5,
+
+                          // Android
                           elevation: 5,
                         }}
                       />
@@ -391,12 +390,11 @@ const NearbyPlaces = ({ navigation }) => {
                               justifyContent: 'center',
                               alignItems: 'center',
                               shadowColor: '#000',
-                              shadowOffset: {
-                                width: 0,
-                                height: 2,
-                              },
-                              shadowOpacity: 0.3,
-                              shadowRadius: 4,
+                              shadowOffset: { width: 0, height: 3 },
+                              shadowOpacity: 0.25,
+                              shadowRadius: 5,
+
+                              // Android
                               elevation: 5,
                               alignSelf: 'center',
                             }}
@@ -412,7 +410,11 @@ const NearbyPlaces = ({ navigation }) => {
                     </View>
 
                     <View style={{ padding: responsiveHeight(1.5) }}>
-                      <BoldText numberOfLines={1} size={2.2} title={item?.name} />
+                      <BoldText
+                        numberOfLines={1}
+                        size={2.2}
+                        title={item?.name}
+                      />
                       <LineBreak val={0.8} />
                       <View
                         style={{

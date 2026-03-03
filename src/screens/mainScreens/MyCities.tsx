@@ -100,12 +100,11 @@ const MyCities = ({ navigation, route }) => {
                     padding: responsiveHeight(2),
                     borderRadius: responsiveHeight(2.5),
                     shadowColor: '#000',
-                    shadowOffset: {
-                      width: 0,
-                      height: 4,
-                    },
-                    shadowOpacity: 0.12,
-                    shadowRadius: 6,
+                    shadowOffset: { width: 0, height: 3 },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 5,
+
+                    // Android
                     elevation: 5,
                   }}
                 >

@@ -349,7 +349,7 @@ const CityDetails = ({ navigation, route }) => {
         }
       />
       <LineBreak val={1.5} />
-      {/* {googlePlacesLoading ? (
+      {googlePlacesLoading ? (
         <View
           style={{ paddingVertical: responsiveHeight(3), alignItems: 'center' }}
         >

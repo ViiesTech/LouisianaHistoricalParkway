@@ -25,7 +25,8 @@ import Button from '../../components/Button';
 import { useSelector } from 'react-redux';
 const Favourites = ({ navigation }) => {
   const { isGuest } = useSelector(state => state.persistedData);
-  const [getUserDetails, { isLoading, data,isFetching }] = useLazyGetUserDetailsQuery();
+  const [getUserDetails, { isLoading, data, isFetching }] =
+    useLazyGetUserDetailsQuery();
   const { favouriteCities } = data?.user || {};
   const [isProcessingFavorite, setIsProcessingFavorite] = useState(false);
 
@@ -113,12 +114,11 @@ const Favourites = ({ navigation }) => {
                     backgroundColor: colors.white,
                     borderRadius: responsiveHeight(2.5),
                     shadowColor: '#000',
-                    shadowOffset: {
-                      width: 0,
-                      height: 4,
-                    },
-                    shadowOpacity: 0.12,
-                    shadowRadius: 6,
+                    shadowOffset: { width: 0, height: 3 },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 5,
+
+                    // Android
                     elevation: 5,
                     flexDirection: 'row',
                     gap: responsiveHeight(2),
@@ -217,9 +217,11 @@ const Favourites = ({ navigation }) => {
               alignItems: 'center',
               minWidth: responsiveWidth(60),
               shadowColor: '#000',
-              shadowOffset: { width: 0, height: 4 },
-              shadowOpacity: 0.3,
-              shadowRadius: 8,
+              shadowOffset: { width: 0, height: 3 },
+              shadowOpacity: 0.25,
+              shadowRadius: 5,
+
+              // Android
               elevation: 10,
             }}
           >

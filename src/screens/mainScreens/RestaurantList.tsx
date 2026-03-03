@@ -41,7 +41,9 @@ const RestaurantList = ({ navigation }) => {
     const t = setTimeout(() => {
       const trimmed = search.trim();
       // Only set debounced search if empty or has at least 3 characters
-      setDebouncedSearch(trimmed.length >= 3 || trimmed.length === 0 ? trimmed : '');
+      setDebouncedSearch(
+        trimmed.length >= 3 || trimmed.length === 0 ? trimmed : '',
+      );
     }, 400);
     return () => clearTimeout(t);
   }, [search]);
@@ -124,167 +126,177 @@ const RestaurantList = ({ navigation }) => {
 
       {/* Search Row */}
       <View style={{ paddingHorizontal: responsiveHeight(2) }}>
-      <View style={{ flexDirection: 'row', gap: responsiveHeight(1.4) }}>
-        <InputField
-          placeHolderColor={colors.placeholderColor}
-          width={90}
-          showSearch
-          mrgnLeft={4}
-          placeholder="Search"
-          value={search}
-          onChangeText={setSearch}
-        />
-        {/* <TouchableOpacity style={styles.mapBtn} activeOpacity={0.8}>
+        <View style={{ flexDirection: 'row', gap: responsiveHeight(1.4) }}>
+          <InputField
+            placeHolderColor={colors.placeholderColor}
+            width={90}
+            showSearch
+            mrgnLeft={4}
+            placeholder="Search"
+            value={search}
+            onChangeText={setSearch}
+          />
+          {/* <TouchableOpacity style={styles.mapBtn} activeOpacity={0.8}>
           <MaterialIcons name="control-camera" color={colors.white} size={24} />
         </TouchableOpacity> */}
-      </View>
+        </View>
 
-      <LineBreak val={1.5} />
+        <LineBreak val={1.5} />
 
-      {/* Chips */}
-      <View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.chipsWrap}
-        >
-          {chips.map(c => {
-            const active = filter === c;
-            const iconMap = {
-              All: icons.all,
-              Restaurants: icons.restaurant,
-              Cafes: icons.cafes,
-              Shops: icons.shops,
-            };
-            const raw = iconMap[c] || '';
-            const colored = colorizeIcon(raw, active ? '#FFFFFF' : '#000000');
-
-            return (
-              <TouchableOpacity
-                key={c}
-                onPress={() => setFilter(c)}
-                style={[styles.chip, active && styles.chipActive]}
-                activeOpacity={0.8}
-              >
-                {raw ? <SVGXml icon={colored} width={16} height={16} /> : null}
-                <Text
-                  style={[
-                    styles.chipText,
-                    active && styles.chipTextActive,
-                    { marginLeft: responsiveHeight(0.6) },
-                  ]}
-                >
-                  {c}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
-      </View>
-      <LineBreak val={1.5} />
-
-      {/* List */}
-      <FlatList
-        contentContainerStyle={{
-          padding: responsiveHeight(0.5),
-          paddingVertical: responsiveHeight(1),
-          paddingBottom: responsiveHeight(2),
-          gap: responsiveHeight(2),
-          flexGrow: 1,
-        }}
-        data={displayedBusinesses}
-        keyExtractor={item => item._id}
-        ListEmptyComponent={() => {
-          if (isLoading) {
-            return (
-              <View style={{ marginTop: 40 }}>
-                <ActivityIndicator size="large" color={colors.theme2} />
-              </View>
-            );
-          }
-
-          return (
-            <View style={{ alignItems: 'center', marginTop: 60 }}>
-              <Ionicons name="search-outline" size={50} color="#ccc" />
-              <Text style={{ marginTop: 10, color: '#999' }}>
-                No business found
-              </Text>
-            </View>
-          );
-        }}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate('RestaurantDetails', {
-                businessId: item._id,
-              })
-            }
-            style={styles.card}
-            activeOpacity={0.9}
+        {/* Chips */}
+        <View>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.chipsWrap}
           >
-            <Image
-              source={{
-                uri: item?.gallery?.find(url =>
-                  url?.toLowerCase().match(/\.(jpg|jpeg|png)$/i),
-                ),
-              }}
-              style={styles.cardImage}
-            />
+            {chips.map(c => {
+              const active = filter === c;
+              const iconMap = {
+                All: icons.all,
+                Restaurants: icons.restaurant,
+                Cafes: icons.cafes,
+                Shops: icons.shops,
+              };
+              const raw = iconMap[c] || '';
+              const colored = colorizeIcon(raw, active ? '#FFFFFF' : '#000000');
 
-            <View style={styles.cardBody}>
-              <View style={styles.cardHeader}>
-                <BoldText
-                  numberOfLines={2}
-                  width={30}
-                  size={2.4}
-                  title={item.name}
-                />
-                <View style={styles.tagPill}>
+              return (
+                <TouchableOpacity
+                  key={c}
+                  onPress={() => setFilter(c)}
+                  style={[styles.chip, active && styles.chipActive]}
+                  activeOpacity={0.8}
+                >
+                  {raw ? (
+                    <SVGXml icon={colored} width={16} height={16} />
+                  ) : null}
                   <Text
-                    style={{
-                      fontSize: responsiveFontSize(1.5),
-                      color: '#030213',
-                    }}
+                    style={[
+                      styles.chipText,
+                      active && styles.chipTextActive,
+                      { marginLeft: responsiveHeight(0.6) },
+                    ]}
                   >
-                    {item.category}
+                    {c}
                   </Text>
-                </View>
-              </View>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+        </View>
+        <LineBreak val={1.5} />
 
-              <NormalText
-                numberOfLines={2}
-                width={55}
-                title={item.description}
+        {/* List */}
+        <FlatList
+          contentContainerStyle={{
+            padding: responsiveHeight(0.5),
+            paddingVertical: responsiveHeight(1),
+            paddingBottom: responsiveHeight(2),
+            gap: responsiveHeight(2),
+            flexGrow: 1,
+          }}
+          data={displayedBusinesses}
+          keyExtractor={item => item._id}
+          ListEmptyComponent={() => {
+            if (isLoading) {
+              return (
+                <View style={{ marginTop: 40 }}>
+                  <ActivityIndicator size="large" color={colors.theme2} />
+                </View>
+              );
+            }
+
+            return (
+              <View style={{ alignItems: 'center', marginTop: 60 }}>
+                <Ionicons name="search-outline" size={50} color="#ccc" />
+                <Text style={{ marginTop: 10, color: '#999' }}>
+                  No business found
+                </Text>
+              </View>
+            );
+          }}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('RestaurantDetails', {
+                  businessId: item._id,
+                })
+              }
+              style={styles.card}
+              activeOpacity={0.9}
+            >
+              <Image
+                source={{
+                  uri: item?.gallery?.find(url =>
+                    url?.toLowerCase().match(/\.(jpg|jpeg|png)$/i),
+                  ),
+                }}
+                style={styles.cardImage}
               />
 
-              <View style={styles.cardFooter}>
-                <View
-                  style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}
-                >
-                  <AntDesign name="star" color={'#FDBA0F'} size={16} />
-                  <Text style={{ color: colors.theme }}>
-                    {item.review?.length > 0
-                      ? (
-                          item.review.reduce((sum, r) => sum + r.rating, 0) /
-                          item.review.length
-                        ).toFixed(1)
-                      : '0.0'}
-                  </Text>
+              <View style={styles.cardBody}>
+                <View style={styles.cardHeader}>
+                  <BoldText
+                    numberOfLines={2}
+                    width={30}
+                    size={2.4}
+                    title={item.name}
+                  />
+                  <View style={styles.tagPill}>
+                    <Text
+                      style={{
+                        fontSize: responsiveFontSize(1.5),
+                        color: '#030213',
+                      }}
+                    >
+                      {item.category}
+                    </Text>
+                  </View>
                 </View>
 
-                <View
-                  style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}
-                >
-                  <Ionicons name="location" color={colors.theme2} size={20} />
-                  <Text style={{ color: colors.theme }} numberOfLines={1}>
-                    {distances[item._id] || 'N/A'}
-                  </Text>
+                <NormalText
+                  numberOfLines={2}
+                  width={55}
+                  title={item.description}
+                />
+
+                <View style={styles.cardFooter}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 6,
+                    }}
+                  >
+                    <AntDesign name="star" color={'#FDBA0F'} size={16} />
+                    <Text style={{ color: colors.theme }}>
+                      {item.review?.length > 0
+                        ? (
+                            item.review.reduce((sum, r) => sum + r.rating, 0) /
+                            item.review.length
+                          ).toFixed(1)
+                        : '0.0'}
+                    </Text>
+                  </View>
+
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 6,
+                    }}
+                  >
+                    <Ionicons name="location" color={colors.theme2} size={20} />
+                    <Text style={{ color: colors.theme }} numberOfLines={1}>
+                      {distances[item._id] || 'N/A'}
+                    </Text>
+                  </View>
                 </View>
               </View>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
+            </TouchableOpacity>
+          )}
+        />
       </View>
 
       {/* Beautiful loading overlay when fetching/searching */}
@@ -310,10 +322,12 @@ const RestaurantList = ({ navigation }) => {
               alignItems: 'center',
               minWidth: responsiveWidth(50),
               shadowColor: '#000',
-              shadowOffset: { width: 0, height: 4 },
-              shadowOpacity: 0.2,
-              shadowRadius: 8,
-              elevation: 8,
+              shadowOffset: { width: 0, height: 3 },
+              shadowOpacity: 0.25,
+              shadowRadius: 5,
+
+              // Android
+              elevation: 5,
             }}
           >
             <ActivityIndicator size="large" color={colors.theme2} />
@@ -378,12 +392,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: responsiveHeight(2.5),
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.12,
-    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+
+    // Android
     elevation: 5,
     flexDirection: 'row',
     width: '100%',

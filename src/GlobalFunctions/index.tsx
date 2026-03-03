@@ -42,7 +42,19 @@ const requestLocationPermission = async (): Promise<boolean> => {
       return false;
     }
   }
-  return true; // iOS permissions are handled via Info.plist
+  // For iOS, request authorization at runtime using the native API.
+  if (Platform.OS === 'ios') {
+    try {
+      // 'whenInUse' will trigger the standard iOS permission prompt.
+      // react-native-geolocation-service exposes requestAuthorization.
+      Geolocation.requestAuthorization && Geolocation.requestAuthorization('whenInUse');
+      return true;
+    } catch (e) {
+      console.warn('iOS requestLocationPermission error', e);
+      return false;
+    }
+  }
+  return false;
 };
 
 // Function to get address from coordinates using reverse geocoding

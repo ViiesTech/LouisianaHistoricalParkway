@@ -21,6 +21,7 @@ import NormalText from '../../components/NormalText';
 import LineBreak from '../../components/LineBreak';
 import SmallContainer from '../../components/SmallContainer';
 import { icons } from '../../icons';
+import { Platform } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import {
   getCurrentLocation,
@@ -175,7 +176,7 @@ const Map = ({ navigation, route }) => {
       >
         <MapView
           userInterfaceStyle="light"
-          provider={PROVIDER_GOOGLE}
+          provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
           style={{ flex: 1 }}
           initialRegion={initialMapRegion}
           showsUserLocation={true}
@@ -233,6 +234,12 @@ const Map = ({ navigation, route }) => {
               style={{
                 backgroundColor: colors.white,
                 borderRadius: responsiveHeight(2),
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 3 },
+                shadowOpacity: 0.25,
+                shadowRadius: 5,
+
+                // Android
                 elevation: 5,
                 flexDirection: 'row',
                 width: responsiveWidth(92),

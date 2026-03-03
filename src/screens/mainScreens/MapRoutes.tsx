@@ -14,6 +14,7 @@ import NormalText from '../../components/NormalText';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import colors from '../../assets/colors';
 import BoldText from '../../components/BoldText';
+import { Platform } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE, Polyline } from 'react-native-maps';
 import {
   getCurrentLocation,
@@ -149,8 +150,8 @@ const MapRoutes = ({ navigation, route }) => {
           <>
             {/* Map occupies full space */}
             <MapView
-              userInterfaceStyle="light" 
-              provider={PROVIDER_GOOGLE}
+              userInterfaceStyle="light"
+              provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
               style={{
                 position: 'absolute',
                 top: 0,

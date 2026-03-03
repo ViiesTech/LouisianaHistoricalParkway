@@ -393,7 +393,11 @@ Announcement
         ) : (
           <FlatList
             horizontal
-            contentContainerStyle={{ gap: responsiveHeight(2),padding:responsiveHeight(1),paddingBottom:responsiveHeight(1.5) }}
+            contentContainerStyle={{
+              gap: responsiveHeight(2),
+              padding: responsiveHeight(1),
+              paddingBottom: responsiveHeight(1.5),
+            }}
             showsHorizontalScrollIndicator={false}
             data={toursData?.touristSpots || []}
             keyExtractor={item => item._id}
