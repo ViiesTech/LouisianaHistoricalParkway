@@ -23,7 +23,8 @@ import { images } from '../../assets/images';
 import ListHeading from '../../components/ListHeading';
 import LineBreak from '../../components/LineBreak';
 import NormalText from '../../components/NormalText';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUserData } from '../../redux/slices';
 import { useLazyGetUserDetailsQuery } from '../../redux/services/Main';
 import { useIsFocused } from '@react-navigation/native';
 const UserProfile = ({ navigation }) => {
@@ -41,7 +42,7 @@ const UserProfile = ({ navigation }) => {
     { id: 11, img: images.stHelenaParish },
     { id: 12, img: images.tangipahoaParish },
   ];
-  const { user, isGuest, guest } = useSelector(state => state.persistedData);
+  const { user, isGuest, guest, token } = useSelector(state => state.persistedData);
   const focus = useIsFocused();
   const [getUserDetails, { isFetching, isLoading, data }] =
     useLazyGetUserDetailsQuery();
@@ -76,18 +77,23 @@ const UserProfile = ({ navigation }) => {
   console.log('visitedCities', visitedCities);
   console.log('itineraries', itineraries);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    // Refetch user details whenever screen is focused or auth token changes
     if (focus && !isGuest) {
-      getUserDetails({}, true)
+      getUserDetails()
         .unwrap()
         .then(res => {
           console.log('res of user details', res);
+          // keep persisted user state in sync with server
+          if (res?.user) dispatch(setUserData(res.user));
         })
         .catch(err => {
           console.log('err', err);
         });
     }
-  }, [focus, isGuest]);
+  }, [focus, isGuest, token, getUserDetails, dispatch]);
 
   // Simple pulsing skeleton animation value
   const pulse = React.useRef(new Animated.Value(0.6)).current;

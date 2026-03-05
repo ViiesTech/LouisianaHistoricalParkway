@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "341664461618",
+    "project_id": "louisiana-parkways",
+    "storage_bucket": "louisiana-parkways.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341664461618:android:2de6d40a3ec2c5be0d9d2b",
+        "android_client_info": {
+          "package_name": "com.louisiana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtd8BKjo9QpNbLaG0O5Fcko6lf6aKjpHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

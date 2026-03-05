@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file injects the notification_color resource into the
+  @react-native-firebase/messaging library build context so that
+  verifyReleaseResources can find it when the library references
+  @color/notification_color via the firebase.json manifest placeholder.
+
+  The actual color value should match the one in
+  app/src/main/res/values/colors.xml.
+-->
+<resources>
+    <color name="notification_color">#FFFFFF</color>
+</resources>

@@ -16,7 +16,20 @@ buildscript {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("com.google.gms:google-services:4.4.2")
     }
 }
 
 apply plugin: "com.facebook.react.rootproject"
+
+// Fix: @react-native-firebase/messaging references @color/notification_color in
+// its AndroidManifest (via the firebase.json placeholder). The library's
+// verifyReleaseResources task runs in isolation and cannot see the app's
+// colors.xml, so we inject a small resource overlay into the library's source set.
+gradle.projectsEvaluated {
+    def messagingProject = findProject(':react-native-firebase_messaging')
+    if (messagingProject != null) {
+        def extraResDir = new File(rootDir, 'firebase_messaging_res')
+        messagingProject.android.sourceSets.main.res.srcDirs += [extraResDir]
+    }
+}

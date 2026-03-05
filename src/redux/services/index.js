@@ -78,6 +78,20 @@ export const Apis = createApi({
         body: data,
       }),
     }),
+    googleLogin: builder.mutation({
+      query: data => ({
+        url: endpoints.GOOGLE_LOGIN,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+    appleLogin: builder.mutation({
+      query: data => ({
+        url: endpoints.APPLE_LOGIN,
+        method: 'POST',
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -91,4 +105,6 @@ export const {
   useUpdateProfileMutation,
   useChangePasswordMutation,
   useDeleteAccountMutation,
+  useGoogleLoginMutation,
+  useAppleLoginMutation,
 } = Apis;

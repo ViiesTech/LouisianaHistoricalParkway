@@ -6,6 +6,8 @@ const initialState = {
   user: {},
   guest: null, // stores guest object
   isGuest: false,
+  isGoogleSignIn: false,
+
   // profileCreated: false,
 };
 
@@ -41,6 +43,18 @@ export const Slice = createSlice({
       })
       .addMatcher(Apis.endpoints.login.matchFulfilled, (state, action) => {
         console.log('acttttssss', action);
+        if (action.payload?.token) {
+          state.user = action.payload.user;
+          state.token = action.payload.token;
+        }
+      })
+      .addMatcher(Apis.endpoints.googleLogin.matchFulfilled, (state, action) => {
+        if (action.payload?.token) {
+          state.user = action.payload.user;
+          state.token = action.payload.token;
+        }
+      })
+      .addMatcher(Apis.endpoints.appleLogin.matchFulfilled, (state, action) => {
         if (action.payload?.token) {
           state.user = action.payload.user;
           state.token = action.payload.token;

@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const Routes = () => {
   const { token } = useSelector(state => state?.persistedData);
-  console.log('token=====>>', token);
+  console.log('token=====<<<<<<<>>', token);
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>

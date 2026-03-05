@@ -1,0 +1,11 @@
+{
+  "react-native": {
+    "ios_background_notification_type": "foreground",
+    "messaging_android_notification_channel_id": "Louisiana1234",
+    "messaging_android_notification_color": "@color/notification_color",
+    "messaging_android_headless_task_timeout": 30000,
+    "messaging_ios_auto_register_for_remote_messages": true,
+    "messaging_android_background_activity_timeout": 30000,
+    "notifications_android_channel_id": "Louisiana1234"
+  }
+}
